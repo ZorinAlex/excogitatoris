@@ -121,11 +121,8 @@ app.controller('dataCtrl', function ($scope, $http) {
         var values = [];
         rules.forEach(function(element, index, array){
             var rule = element.split(':');
-            rule.forEach(function(element, index, array){
-                if(index % 2 == 0){properties.push(element.trim())
-                } else {values.push(element.trim())
-                }
-            })
+            properties.push(rule[0].trim());
+            values.push(rule[1].trim());
         });
         var objCss = {};
         var objRule = {};
